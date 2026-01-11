@@ -1,0 +1,171 @@
+{
+  "//": "==============================================================================",
+  "//2": "VS Code Debug Configuration",
+  "//3": "==============================================================================",
+  "//4": "Location: .vscode/launch.json",
+  "//5": "Purpose: Configure debugging for Python applications in containers",
+  "//6": "Usage: Press F5 to start debugging, or use Debug panel",
+  "//7": "==============================================================================",
+
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: FastAPI",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "src.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--reload",
+        "--log-level",
+        "debug"
+      ],
+      "jinja": true,
+      "justMyCode": false,
+      "env": {
+        "PYTHONUNBUFFERED": "1",
+        "ENVIRONMENT": "development",
+        "LOG_LEVEL": "DEBUG"
+      },
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Python: Flask",
+      "type": "python",
+      "request": "launch",
+      "module": "flask",
+      "env": {
+        "FLASK_APP": "src.main:app",
+        "FLASK_ENV": "development",
+        "FLASK_DEBUG": "1",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "args": [
+        "run",
+        "--host=0.0.0.0",
+        "--port=8000",
+        "--no-debugger",
+        "--no-reload"
+      ],
+      "jinja": true,
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      },
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Python: Django",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": [
+        "runserver",
+        "0.0.0.0:8000"
+      ],
+      "django": true,
+      "justMyCode": false,
+      "env": {
+        "PYTHONUNBUFFERED": "1",
+        "DJANGO_SETTINGS_MODULE": "config.settings.development"
+      },
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Python: Remote Attach",
+      "type": "python",
+      "request": "attach",
+      "connect": {
+        "host": "localhost",
+        "port": 5678
+      },
+      "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}",
+          "remoteRoot": "/app"
+        }
+      ],
+      "justMyCode": false
+    },
+    {
+      "name": "Python: pytest (Current File)",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "${file}",
+        "-v",
+        "-s",
+        "--tb=short"
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTHONUNBUFFERED": "1",
+        "ENVIRONMENT": "testing"
+      },
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Python: pytest (All Tests)",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "tests/",
+        "-v",
+        "--cov=src",
+        "--cov-report=html",
+        "--cov-report=term-missing"
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTHONUNBUFFERED": "1",
+        "ENVIRONMENT": "testing"
+      },
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Docker: Attach to Container",
+      "type": "python",
+      "request": "attach",
+      "connect": {
+        "host": "localhost",
+        "port": 5678
+      },
+      "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}/src",
+          "remoteRoot": "/app/src"
+        }
+      ],
+      "justMyCode": false
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack: API + Database",
+      "configurations": [
+        "Python: FastAPI"
+      ],
+      "preLaunchTask": "docker-compose-up",
+      "stopAll": true
+    }
+  ]
+}

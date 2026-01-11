@@ -1,0 +1,113 @@
+{
+  "_comment": "==============================================================================",
+  "_comment2": "Docker Desktop Settings Configuration",
+  "_comment3": "==============================================================================",
+  "_comment4": "Location: %APPDATA%\\Docker\\settings.json",
+  "_comment5": "Machine: DESKTOP-6NMJEGK (12GB RAM, 4 CPU threads)",
+  "_comment6": "Resource Allocation: 4GB RAM, 2 CPUs for Docker",
+  "_comment7": "After editing: Restart Docker Desktop completely",
+  "_comment8": "==============================================================================",
+
+  "settingsVersion": 1,
+  
+  "memoryMiB": 4096,
+  
+  "cpus": 2,
+  
+  "swapMiB": 1024,
+  
+  "diskSizeMiB": 102400,
+  
+  "displayedTutorial": true,
+  
+  "autoStart": false,
+  
+  "openUIOnStartupDisabled": true,
+  
+  "analyticsEnabled": false,
+  
+  "displaySwitchWinLinContainers": false,
+  
+  "wslEngineEnabled": true,
+  
+  "useWindowsContainers": false,
+  
+  "disableUpdate": false,
+  
+  "checkForUpdates": true,
+  
+  "enableIntegratedDockerCLI": true,
+  
+  "filesharingDirectories": [],
+  
+  "vpnKitMaxPortIdleTime": 300,
+  
+  "dockerAppLaunchPath": "",
+  
+  "kubernetesEnabled": false,
+  
+  "showKubernetesSystemContainers": false,
+  
+  "showSystemContainers": false,
+  
+  "resourceSaver": {
+    "enabled": true,
+    "idleTimeout": 300
+  },
+  
+  "enhancedContainerIsolation": {
+    "value": false,
+    "locked": false
+  },
+  
+  "useVirtualizationFrameworkVirtioFS": true,
+  
+  "useVirtualizationFrameworkRosetta": false,
+  
+  "licenseTermsVersion": 2,
+  
+  "vmVpnkitCIDR": "192.168.65.0/24",
+  
+  "overrideProxyHTTP": "",
+  "overrideProxyHTTPS": "",
+  "overrideProxyExclude": "localhost,127.0.0.1",
+  
+  "proxyHttpMode": "system",
+  
+  "buildKitEnabled": true,
+  
+  "integrations": {
+    "createDockerContextForWSL": true,
+    "distributionIntegrations": {
+      "Ubuntu": true,
+      "Ubuntu-22.04": true
+    }
+  },
+  
+  "dockerComposeVersion": 2,
+  
+  "extensionsEnabled": true,
+  
+  "extensions": {},
+  
+  "onlyMarketplaceExtensions": false,
+  
+  "wslDistributions": [
+    "Ubuntu"
+  ],
+  
+  "diskPath": "",
+  
+  "diskTRIM": true,
+  
+  "exposeDockerAPIOnTCP2375": false,
+  
+  "linuxVM": {
+    "wslEngineEnabled": true,
+    "dockerDaemonOptions": ""
+  },
+  
+  "dataFolder": "",
+  
+  "autoDownloadUpdates": false
+}
