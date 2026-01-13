@@ -10,7 +10,7 @@ from app.database import Base, engine
 from app.exceptions import AppException
 from app.logging_config import configure_logging
 from app.middleware import LoggingMiddleware
-from app.routers import completions, habits
+from app.routers import completions, habits, hello
 
 settings = get_settings()
 logger = structlog.get_logger()
@@ -67,6 +67,7 @@ app.add_middleware(
 # Routers
 app.include_router(habits.router, prefix="/api")
 app.include_router(completions.router, prefix="/api")
+app.include_router(hello.router, prefix="/api")
 
 
 @app.get("/health")
